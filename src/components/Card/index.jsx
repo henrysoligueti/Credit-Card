@@ -1,7 +1,7 @@
 import React from 'react';
 import './card.scss';
 import { useRecoilValue } from 'recoil';
-import { atomCardNumber, atomCardName, atomCardMonth, atomCardYear, atomCardCvv, atomFlip } from "../../state/atom"
+import { atomCardNumber, atomCardName, atomCardMonth, atomCardYear, atomCardCvv, atomCardOperator, atomFlip } from "../../state/atom"
 
 export default function Card() {
     const texture = ['texture_01.jpg','texture_02.jpg','texture_03.jpg','texture_04.jpg'];
@@ -12,7 +12,8 @@ export default function Card() {
     const cardMonth = useRecoilValue(atomCardMonth);
     const cardYear = useRecoilValue(atomCardYear);
     const cardCvv = useRecoilValue(atomCardCvv);
-    const flip = useRecoilValue(atomFlip);
+    const cardOperator = useRecoilValue(atomCardOperator);
+    const flip = useRecoilValue(atomFlip);    
 
     return(
         <div className="container__card">
@@ -21,7 +22,7 @@ export default function Card() {
                     <div className="card__header">
                         <div className="d-flex align-items-start justify-content-between flex-wrap">
                             <img src="/assets/images/chip.png" className="card__header_chip" />
-                            <img src="/assets/images/visa_logo.png" className="card__header_operator" />
+                            <img src={ '/assets/images/'+cardOperator+'_logo.png' } className="card__header_operator" />
                         </div>
                     </div>
                     <div className="card__number">
@@ -67,7 +68,7 @@ export default function Card() {
                         </div>
 
                         <div className="text-end">
-                            <img src="/assets/images/visa_logo.png" className="card__footer_operator" />
+                            <img src={ '/assets/images/'+cardOperator+'_logo.png' } className="card__footer_operator" />
                         </div>
                     </div>
                 </div>

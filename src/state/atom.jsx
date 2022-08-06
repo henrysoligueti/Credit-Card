@@ -1,5 +1,10 @@
 import { atom } from "recoil";
 
+export const atomCardOperator = atom({
+    key: 'atomCardOperator',
+    default: ['visa']
+});
+
 export const atomCardNumber = atom({
     key: 'atomCardNumber',
     default: ['']

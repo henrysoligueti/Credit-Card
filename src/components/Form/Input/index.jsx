@@ -1,9 +1,13 @@
 import React from 'react';
 import { useSetRecoilState } from 'recoil';
-import { atomCardNumber, atomCardName, atomCardMonth, atomCardYear, atomCardCvv, atomFlip } from "../../../state/atom";
+import { atomCardNumber, atomCardName, atomCardMonth, atomCardYear, atomCardCvv, atomCardOperator, atomFlip } from "../../../state/atom";
 import { mask } from 'remask';
 
 export default function Input(props) {
+
+    var setOperator = useSetRecoilState(
+        atomCardOperator
+    )
     
     var setNumber = useSetRecoilState(
         atomCardNumber
@@ -34,7 +38,16 @@ export default function Input(props) {
 
     if(props.name=='card_number'){
 
-        changeAction = (e) => setNumber(mask(e.target.value, ['9999 9999 9999 9999']));
+        changeAction = (e) => (
+            setNumber(
+                mask(e.target.value, ['9999 9999 9999 9999']),
+                (e.target.value.toString().slice(0,1)==3&&e.target.value.toString().slice(1,2)==7?setOperator('american'):'visa'),
+                (e.target.value.toString().slice(0,1)==3&&e.target.value.toString().slice(1,2)!=7?setOperator('dinners'):'visa'),
+                (e.target.value.toString().slice(0,1)==4?setOperator('visa'):'visa'),
+                (e.target.value.toString().slice(0,1)==5?setOperator('mastercard'):'visa'),
+                (e.target.value.toString().slice(0,1)==6&&e.target.value.toString().slice(1,2)=='0'?setOperator('hipercard'):'visa')
+            )
+        );
         focusAction = (e) => setFlip('');
 
     }else if(props.name=='card_name'){

@@ -17,7 +17,7 @@
             }
 
             .card__header_operator {
-                width:85px;
+                height:47px;
             }
         }
 
@@ -114,10 +114,10 @@
             }
 
             .card__footer_operator {
-                width:85px;
+                height:47px;
                 position:relative;
                 z-index:2;
-                opacity:.5;
+                opacity:.7;
                 margin-top:25px;
             }
         }    
@@ -142,11 +142,34 @@
         .card {
             .card__header {
                 margin-bottom:30px;
+
+                .card__header_chip {
+                    width:46px;
+                }
+
+                .card__header_operator {
+                    height:44px;
+                }
             }
 
             .card__front {
                 .card__number {
                     margin-bottom:20px;
+                    font-size:21px;
+                }
+            }
+
+            .card__back {
+                .card__black_target {
+                    height:38px;
+                }
+
+                .card__cvv {
+                    height:34px;
+                }
+
+                .card__footer_operator {
+                    height:41px;
                 }
             }
         }

@@ -34,7 +34,7 @@ export default function Form() {
                     />
                 </div>
 
-                <div className="col-lg-4">
+                <div className="col-4">
                     <Input
                         label="Month"
                         id="card_month"                
@@ -44,7 +44,7 @@ export default function Form() {
                     />
                 </div>
 
-                <div className="col-lg-4">
+                <div className="col-4">
                     <Input
                         label="Year"
                         id="card_year"                
@@ -54,7 +54,7 @@ export default function Form() {
                     />
                 </div>
 
-                <div className="col-lg-4">
+                <div className="col-4">
                     <Input
                         label="CVV"
                         id="card_cvv"                
