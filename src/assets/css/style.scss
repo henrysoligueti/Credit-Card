@@ -1,0 +1,88 @@
+* {
+    font-family: 'Roboto', sans-serif;    
+}
+
+$color_main: #23A6D5;
+$color_accent: #23D5AB;
+$color_secondary: #EE7752;
+$color_secondary_accent: #E73C7E;
+
+@mixin grayscale($percent) {
+    -webkit-filter: grayscale($percent);
+    -moz-filter: grayscale($percent);
+    -ms-filter: grayscale($percent);
+    -o-filter: grayscale($percent);
+    filter: grayscale($percent);
+}
+
+@mixin gradient($deg, $a, $b, $c, $d) {
+    background: -moz-linear-gradient($deg, $a, $b, $c, $d);
+    background: -webkit-linear-gradient($deg, $a, $b, $c, $d);
+    background: linear-gradient($deg, $a, $b, $c, $d);
+}
+
+@mixin animate($animation, $time) {
+    -webkit-animation: $animation $time ease infinite;
+    -moz-animation: $animation $time ease infinite;
+    -o-animation: $animation $time ease infinite;
+    animation: $animation $time ease infinite;
+}
+
+@mixin transition($time) {
+	-webkit-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
+}
+
+@-webkit-keyframes gradient_transition {
+    0% { top: 0; left: 0; }
+    50% { top: -200%; left: -200%; }
+    100% { top: 0; left: 0; }
+}
+@-moz-keyframes gradient_transition {
+    0% { top: 0; left: 0; }
+    50% { top: -200%; left: -200%; }
+    100% { top: 0; left: 0; }
+}
+@-o-keyframes gradient_transition {
+    0% { top: 0; left: 0; }
+    50% { top: -200%; left: -200%; }
+    100% { top: 0; left: 0; }
+}
+@keyframes gradient_transition {
+    0% { top: 0; left: 0; }
+    50% { top: -200%; left: -200%; }
+    100% { top: 0; left: 0; }
+}
+
+body {
+    /*background:#ddeefc;*/
+    overflow: hidden;
+    &::before, &::after {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        @include grayscale(100%);
+    }
+    &::after {
+        content: "";
+        width: 400%;
+        height: 400%;
+        opacity: 0.8;
+        @include gradient(-45deg, $color_secondary, $color_secondary_accent, $color_main, $color_accent);
+        @include animate(gradient_transition, 15s);
+    }
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    width:1400px;
+    max-width:100%;
+}
