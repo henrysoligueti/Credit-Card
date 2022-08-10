@@ -44,6 +44,7 @@
             
             &.flipped {
                 transform:perspective(1000px) rotateY(180deg) rotateX(0deg) rotateZ(0deg);
+                -webkit-transform:perspective(1000px) rotateY(180deg) rotateX(0deg) rotateZ(0deg);
             }
 
             .card__number {
@@ -57,7 +58,7 @@
         }      
         
         .card__back {
-            background:blue;
+            background:#ddd;
             position:absolute;
             top:0;
             left:0;
@@ -68,6 +69,7 @@
             pointer-events:none;
             opacity:0;
             transform:perspective(1000px) rotateY(-180deg) rotateX(0deg) rotateZ(0deg);
+            -webkit-transform:perspective(1000px) rotateY(-180deg) rotateX(0deg) rotateZ(0deg);
             transition:transform ease 1s, opacity 0s ease .3s;   
             overflow:hidden;
 
@@ -85,6 +87,7 @@
                 opacity:1;
                 pointer-events:all;
                 transform:perspective(1000px) rotateY(0) rotateX(0deg) rotateZ(0deg);
+                -webkit-transform:perspective(1000px) rotateY(0) rotateX(0deg) rotateZ(0deg);
             }
 
             .card__padding {

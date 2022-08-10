@@ -35,6 +35,7 @@ export default function Input(props) {
 
     var changeAction;
     var focusAction;
+    var blurAction;
 
     if(props.name=='card_number'){
 
@@ -69,6 +70,7 @@ export default function Input(props) {
 
         changeAction = (e) => setCvv(mask(e.target.value, ['999']));
         focusAction = (e) => setFlip('flipped');
+        blurAction = (e) => setFlip('');
 
     }
 
@@ -84,6 +86,7 @@ export default function Input(props) {
                 maxLength={ props.maxLength }
                 onChange={ changeAction }
                 onFocus={ focusAction }
+                onBlur={ blurAction }
             />
         </>
     )
