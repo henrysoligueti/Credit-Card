@@ -2,6 +2,8 @@
     width:400px;
     max-width:90%;
     margin:0 auto;
+    position: relative;
+    z-index: 2;
 
     .card {        
         position:relative;
