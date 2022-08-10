@@ -84,6 +84,7 @@ export default function Input(props) {
                 id={ props.id }
                 value={ props.value }
                 maxLength={ props.maxLength }
+                placeholder={ props.placeholder }
                 onChange={ changeAction }
                 onFocus={ focusAction }
                 onBlur={ blurAction }

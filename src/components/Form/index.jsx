@@ -19,6 +19,7 @@ export default function Form() {
                         name="card_number"
                         type="tel"
                         maxLength="19"
+                        placeholder="Ex.: 9999 9999 9999 9999"
                         value={ cardNumber }
                     />
                 </div>
@@ -30,6 +31,7 @@ export default function Form() {
                         name="card_name"
                         type="text"
                         maxLength="30"
+                        placeholder="Ex.: Agostinho Carrara"
                         value={ cardName }
                     />
                 </div>
@@ -40,6 +42,7 @@ export default function Form() {
                         id="card_month"                
                         name="card_month"
                         type="text"
+                        placeholder="Ex.: 01"
                         maxLength="2"
                     />
                 </div>
@@ -50,6 +53,7 @@ export default function Form() {
                         id="card_year"                
                         name="card_year"
                         type="text"
+                        placeholder="Ex.: 29"
                         maxLength="2"
                     />
                 </div>
@@ -60,6 +64,7 @@ export default function Form() {
                         id="card_cvv"                
                         name="card_cvv"
                         type="tel"
+                        placeholder="Ex.: 999"
                         maxLength="3"
                     />
                 </div>
